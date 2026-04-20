@@ -15,7 +15,7 @@ export function HeroSection() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setActive((i) => (i + 1) % slides.length), 4000);
+    const t = setInterval(() => setActive((i) => (i + 1) % slides.length), 8000);
     return () => clearInterval(t);
   }, []);
 
