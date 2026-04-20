@@ -15,13 +15,13 @@ export function HeroSection() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setActive((i) => (i + 1) % slides.length), 4000);
+    const t = setInterval(() => setActive((i) => (i + 1) % slides.length), 8000);
     return () => clearInterval(t);
   }, []);
 
   return (
     <section
-      className="relative min-h-[100svh] flex items-center pt-24 pb-40 md:pb-48 bg-cover bg-center overflow-hidden"
+      className="relative min-h-[100svh] flex items-center pt-24 pb-40 md:pb-48 bg-cover bg-center"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       {/* dark overlay */}

@@ -6,7 +6,7 @@ import about from "@/assets/about-preview.jpg";
 
 export function AboutPreview() {
   return (
-    <section className="py-24 md:py-32 bg-surface">
+    <section className="relative z-0 py-24 md:py-32 bg-surface">
       <div className="container-px mx-auto max-w-7xl grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}

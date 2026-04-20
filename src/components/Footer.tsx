@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="R-Pro Travels" className="h-12 w-12 bg-white rounded-full p-1" />
+              <img src={logo} alt="R-Pro Travels" className="h-12 w-12 object-contain" />
               <div>
                 <div className="font-heading font-bold text-lg">R-Pro Travels</div>
                 <div className="text-xs text-white/70 uppercase tracking-widest">& Tours Limited</div>
