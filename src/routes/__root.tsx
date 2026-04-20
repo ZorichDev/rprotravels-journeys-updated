@@ -41,6 +41,13 @@ export const Route = createRootRoute({
       { name: "author", content: "R-Pro Travels and Tours Limited" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "R-Pro Travels — Visa, Flights & Hotels Across Africa" },
+      { name: "twitter:title", content: "R-Pro Travels — Visa, Flights & Hotels Across Africa" },
+      { name: "description", content: "A corporate website for R-Pro Travels and Tours Limited, showcasing services and generating leads." },
+      { property: "og:description", content: "A corporate website for R-Pro Travels and Tours Limited, showcasing services and generating leads." },
+      { name: "twitter:description", content: "A corporate website for R-Pro Travels and Tours Limited, showcasing services and generating leads." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/44522847-e473-4643-8ed9-a6a365b70841/id-preview-3cb03a66--b9651d46-6f52-4da8-b147-348bd519e4b5.lovable.app-1776678430646.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/44522847-e473-4643-8ed9-a6a365b70841/id-preview-3cb03a66--b9651d46-6f52-4da8-b147-348bd519e4b5.lovable.app-1776678430646.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
