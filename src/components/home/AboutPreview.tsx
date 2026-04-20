@@ -19,8 +19,8 @@ export function AboutPreview() {
             <img src={about} alt="R-Pro Travels consultant" className="w-full aspect-[4/5] object-cover" loading="lazy" />
           </div>
           <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground rounded-2xl p-5 shadow-[var(--shadow-glow)] hidden md:block">
-            <div className="text-3xl font-heading font-bold">10+</div>
-            <div className="text-xs uppercase tracking-wider">Years Experience</div>
+            <div className="text-3xl font-heading font-bold">100%</div>
+            <div className="text-xs uppercase tracking-wider">Client Satisfaction</div>
           </div>
           <div className="absolute -top-6 -left-6 hidden md:block">
             <div className="h-24 w-24 rounded-full bg-secondary/20 blur-2xl" />
