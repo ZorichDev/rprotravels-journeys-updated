@@ -21,7 +21,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative min-h-[100svh] flex items-center pt-24 pb-40 md:pb-48 bg-cover bg-center"
+      className="relative min-h-[100svh] flex items-center pt-24 pb-16 md:pb-48 bg-cover bg-center"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       {/* dark overlay */}
@@ -137,7 +137,7 @@ export function HeroSection() {
       </div>
 
       {/* Floating feature cards — overlap bottom */}
-      <div className="absolute -bottom-12 md:-bottom-16 left-0 right-0 z-30 px-4">
+      <div className="relative mt-12 md:mt-0 md:absolute md:-bottom-16 left-0 right-0 z-30 px-4">
         <div className="container-px mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
