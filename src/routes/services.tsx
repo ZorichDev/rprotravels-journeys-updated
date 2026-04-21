@@ -1,27 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { services } from "@/components/home/ServicesSection";
 import servicesHero from "@/assets/services-hero.jpg";
-
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Our Services — R-Pro Travels" },
-      {
-        name: "description",
-        content:
-          "Explore R-Pro Travels' full range of services: visa assistance, flight booking, hotels, medical tourism, tours, corporate travel and more.",
-      },
-      { property: "og:title", content: "Our Services — R-Pro Travels" },
-      { property: "og:description", content: "Visa, flights, hotels, tours, corporate travel and logistics — all in one place." },
-      { property: "og:image", content: servicesHero },
-    ],
-  }),
-  component: ServicesPage,
-});
 
 const benefitsByService: Record<string, string[]> = {
   "visa-assistance": ["High visa success rate", "Document review & guidance", "All visa types covered"],
@@ -35,9 +19,19 @@ const benefitsByService: Record<string, string[]> = {
   "logistics": ["DHL partnership", "Door-to-door tracking", "Secure handling"],
 };
 
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <>
+      <Helmet>
+        <title>Our Services — R-Pro Travels</title>
+        <meta
+          name="description"
+          content="Explore R-Pro Travels' full range of services: visa assistance, flight booking, hotels, medical tourism, tours, corporate travel and more."
+        />
+        <meta property="og:title" content="Our Services — R-Pro Travels" />
+        <meta property="og:description" content="Visa, flights, hotels, tours, corporate travel and logistics — all in one place." />
+        <meta property="og:image" content={servicesHero} />
+      </Helmet>
       <PageHero
         title="Our Services"
         subtitle="From visas to vacations — explore everything we do to make travel effortless."
@@ -70,7 +64,7 @@ function ServicesPage() {
                 </ul>
               </div>
               <Button asChild className="rounded-full bg-navy hover:bg-navy/90 self-stretch md:self-center px-6">
-                <Link to="/services/$slug" params={{ slug }}>
+                <Link to={`/services/${slug}`}>
                   Enquire Now <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

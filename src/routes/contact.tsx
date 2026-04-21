@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Facebook, Instagram, Twitter, CheckCircle2 } from "lucide-react";
@@ -9,24 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import contactHero from "@/assets/contact-hero.jpg";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Us — R-Pro Travels" },
-      {
-        name: "description",
-        content:
-          "Get in touch with R-Pro Travels. Call 09036630650, email customercare@rprogroup.com.ng, or visit us in Lekki Gardens, Lagos.",
-      },
-      { property: "og:title", content: "Contact R-Pro Travels" },
-      { property: "og:description", content: "Reach our travel experts — by phone, email, or in person." },
-      { property: "og:image", content: contactHero },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,6 +27,16 @@ function ContactPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Us — R-Pro Travels</title>
+        <meta
+          name="description"
+          content="Get in touch with R-Pro Travels. Call 09036630650, email customercare@rprogroup.com.ng, or visit us in Lekki Gardens, Lagos."
+        />
+        <meta property="og:title" content="Contact R-Pro Travels" />
+        <meta property="og:description" content="Reach our travel experts — by phone, email, or in person." />
+        <meta property="og:image" content={contactHero} />
+      </Helmet>
       <PageHero
         title="Contact Us"
         subtitle="Talk to our travel experts — we're ready to help plan your next journey."
@@ -73,7 +66,6 @@ function ContactPage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10 items-start">
-            {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -114,7 +106,6 @@ function ContactPage() {
               </form>
             </motion.div>
 
-            {/* Map + socials */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
