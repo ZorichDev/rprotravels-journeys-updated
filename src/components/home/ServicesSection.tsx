@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FileCheck, Stethoscope, Plane, Hotel, Map, Car, Briefcase, Headphones, Package, ArrowUpRight } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 
 export const services = [
   { Icon: FileCheck, title: "Visa Assistance", desc: "Expert support for tourist, study, and work visas.", slug: "visa-assistance" },
@@ -34,8 +34,7 @@ export function ServicesSection() {
               transition={{ duration: 0.5, delay: i * 0.05 }}
             >
               <Link
-                to="/services/$slug"
-                params={{ slug }}
+                to={`/services/${slug}`}
                 className="group block bg-card rounded-2xl p-7 border border-border hover:border-primary/30 hover-lift relative overflow-hidden"
               >
                 <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors" />

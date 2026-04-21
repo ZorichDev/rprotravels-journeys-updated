@@ -1,4 +1,4 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, MessageCircle, FileSearch, FileCheck2, Send } from "lucide-react";
@@ -123,5 +123,3 @@ export default function ServiceDetail() {
     </>
   );
 }
-// keep Navigate referenced to avoid unused-import false flag if linter strict
-void Navigate;
