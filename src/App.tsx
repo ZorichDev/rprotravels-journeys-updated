@@ -1,14 +1,14 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import { SiteLoader } from "./components/SiteLoader";
-import IndexPage from "./routes/index";
-import AboutPage from "./routes/about";
-import ServicesPage from "./routes/services";
-import ServiceDetailPage from "./routes/services.$slug";
-import ContactPage from "./routes/contact";
-import NotFoundPage from "./routes/not-found";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { SiteLoader } from "@/components/SiteLoader";
+import IndexPage from "@/routes/index";
+import AboutPage from "@/routes/about";
+import ServicesPage from "@/routes/services";
+import ServiceDetailPage from "@/routes/services.$slug";
+import ContactPage from "@/routes/contact";
+import NotFoundPage from "@/routes/not-found";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
