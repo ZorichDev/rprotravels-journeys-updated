@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Target, Eye, Heart, Award, Users, Globe2, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
@@ -7,35 +8,28 @@ import { Button } from "@/components/ui/button";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutPreview from "@/assets/about-preview.jpg";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — R-Pro Travels and Tours Limited" },
-      {
-        name: "description",
-        content:
-          "Learn about R-Pro Travels — a trusted Pan-African travel partner delivering seamless travel, visa, and tour solutions.",
-      },
-      { property: "og:title", content: "About R-Pro Travels and Tours Limited" },
-      {
-        property: "og:description",
-        content: "Pan-African travel partner with a passion for delivering seamless travel experiences.",
-      },
-      { property: "og:image", content: aboutHero },
-    ],
-  }),
-  component: AboutPage,
-});
-
 const values = [
   { Icon: Award, title: "Integrity", desc: "We act with honesty and transparency in everything we do." },
   { Icon: Heart, title: "Excellence", desc: "We deliver exceptional quality in every booking and interaction." },
   { Icon: Users, title: "Customer Focus", desc: "Your travel goals are at the center of every decision we make." },
 ];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <>
+      <Helmet>
+        <title>About Us — R-Pro Travels and Tours Limited</title>
+        <meta
+          name="description"
+          content="Learn about R-Pro Travels — a trusted Pan-African travel partner delivering seamless travel, visa, and tour solutions."
+        />
+        <meta property="og:title" content="About R-Pro Travels and Tours Limited" />
+        <meta
+          property="og:description"
+          content="Pan-African travel partner with a passion for delivering seamless travel experiences."
+        />
+        <meta property="og:image" content={aboutHero} />
+      </Helmet>
       <PageHero
         title="About Us"
         subtitle="A trusted travel partner for individuals and organizations across Africa and beyond."
