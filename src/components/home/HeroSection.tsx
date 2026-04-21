@@ -21,7 +21,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative min-h-[100svh] flex items-center pt-24 pb-16 md:pb-48 bg-cover bg-center"
+      className="relative min-h-[100svh] flex flex-col md:flex-row md:items-center pt-24 pb-16 md:pb-48 bg-cover bg-center"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
       {/* dark overlay */}
