@@ -1,14 +1,14 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Home", end: true },
+  { to: "/about", label: "About", end: false },
+  { to: "/services", label: "Services", end: false },
+  { to: "/contact", label: "Contact", end: false },
 ] as const;
 
 export function Header() {
@@ -45,17 +45,20 @@ export function Header() {
 
         <nav className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link
+            <NavLink
               key={item.to}
               to={item.to}
-              className={`text-sm font-medium transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full ${
-                scrolled ? "text-navy hover:text-primary" : "text-white hover:text-white"
-              }`}
-              activeProps={{ className: "text-primary after:w-full" }}
-              activeOptions={{ exact: item.to === "/" }}
+              end={item.end}
+              className={({ isActive }) =>
+                `text-sm font-medium transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full ${
+                  isActive
+                    ? "text-primary after:w-full"
+                    : `${scrolled ? "text-navy hover:text-primary" : "text-white hover:text-white"} after:w-0`
+                }`
+              }
             >
               {item.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
@@ -88,16 +91,17 @@ export function Header() {
         <div className="lg:hidden bg-background border-t border-border animate-[fade-in_0.2s_ease-out]">
           <div className="container-px mx-auto max-w-7xl py-4 flex flex-col gap-3">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.to}
                 to={item.to}
+                end={item.end}
                 onClick={() => setOpen(false)}
-                className="text-navy font-medium py-2 border-b border-border"
-                activeProps={{ className: "text-primary" }}
-                activeOptions={{ exact: item.to === "/" }}
+                className={({ isActive }) =>
+                  `font-medium py-2 border-b border-border ${isActive ? "text-primary" : "text-navy"}`
+                }
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
             <Button asChild className="bg-primary hover:bg-primary/90 mt-2">
               <a href="https://rprotravels.com/" target="_blank" rel="noopener noreferrer">

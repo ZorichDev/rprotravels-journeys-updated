@@ -1,46 +1,11 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Link, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, MessageCircle, FileSearch, FileCheck2, Send } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { services } from "@/components/home/ServicesSection";
 import servicesHero from "@/assets/services-hero.jpg";
-
-export const Route = createFileRoute("/services/$slug")({
-  loader: ({ params }) => {
-    const service = services.find((s) => s.slug === params.slug);
-    if (!service) throw notFound();
-    return { service };
-  },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.service.title ?? "Service"} — R-Pro Travels` },
-      {
-        name: "description",
-        content: loaderData?.service.desc ?? "Professional travel service from R-Pro Travels.",
-      },
-      { property: "og:title", content: `${loaderData?.service.title} — R-Pro Travels` },
-      { property: "og:description", content: loaderData?.service.desc ?? "" },
-      { property: "og:image", content: servicesHero },
-    ],
-  }),
-  notFoundComponent: () => (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 pt-32">
-      <h1 className="font-heading text-4xl font-bold text-navy">Service not found</h1>
-      <p className="mt-3 text-muted-foreground">The service you're looking for doesn't exist.</p>
-      <Button asChild className="mt-6 rounded-full bg-primary hover:bg-primary/90">
-        <Link to="/services">View all services</Link>
-      </Button>
-    </div>
-  ),
-  errorComponent: ({ error }) => (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 pt-32">
-      <h1 className="font-heading text-3xl font-bold text-navy">Something went wrong</h1>
-      <p className="mt-2 text-muted-foreground text-sm">{error.message}</p>
-    </div>
-  ),
-  component: ServiceDetail,
-});
 
 const steps = [
   { Icon: MessageCircle, title: "Consultation", desc: "We discuss your needs and objectives in detail." },
@@ -49,12 +14,33 @@ const steps = [
   { Icon: Send, title: "Delivery", desc: "You receive your booking, visa, or service confirmation." },
 ];
 
-function ServiceDetail() {
-  const { service } = Route.useLoaderData();
+export default function ServiceDetail() {
+  const { slug } = useParams<{ slug: string }>();
+  const service = services.find((s) => s.slug === slug);
+
+  if (!service) {
+    return (
+      <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 pt-32">
+        <h1 className="font-heading text-4xl font-bold text-navy">Service not found</h1>
+        <p className="mt-3 text-muted-foreground">The service you're looking for doesn't exist.</p>
+        <Button asChild className="mt-6 rounded-full bg-primary hover:bg-primary/90">
+          <Link to="/services">View all services</Link>
+        </Button>
+      </div>
+    );
+  }
+
   const Icon = service.Icon;
 
   return (
     <>
+      <Helmet>
+        <title>{service.title} — R-Pro Travels</title>
+        <meta name="description" content={service.desc} />
+        <meta property="og:title" content={`${service.title} — R-Pro Travels`} />
+        <meta property="og:description" content={service.desc} />
+        <meta property="og:image" content={servicesHero} />
+      </Helmet>
       <PageHero title={service.title} subtitle={service.desc} bgImage={servicesHero} breadcrumb={service.title} />
 
       <section className="py-24 md:py-28 bg-background">
