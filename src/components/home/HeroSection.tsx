@@ -111,7 +111,7 @@ export function HeroSection() {
           <motion.div
             animate={{ y: [0, -14, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -left-6 top-12 z-10 glass rounded-2xl p-4 shadow-[var(--shadow-soft)] hidden xl:flex items-center gap-3"
+            className="absolute -left-6 top-12 z-10 glass rounded-2xl p-4 shadow-[var(--shadow-soft)] flex items-center gap-3"
           >
             <div className="h-10 w-10 rounded-full bg-primary/15 flex items-center justify-center">
               <Plane className="h-5 w-5 text-primary" />
