@@ -15,9 +15,9 @@ export function Footer() {
                 <div className="text-xs text-white/70 uppercase tracking-widest">& Tours Limited</div>
               </div>
             </div>
-            {/* <p className="text-sm text-white/70 leading-relaxed">
-              Your trusted Pan-African travel partner — visa, flights, hotels, and premium travel services.
-            </p> */}
+            <p className="text-sm text-white/70 leading-relaxed">
+              Your trusted  travel partner — visa, flights, hotels, and premium travel services.
+            </p>
             <div className="flex gap-3 mt-5">
               {[
                 { Icon: Facebook, href: "#" },
