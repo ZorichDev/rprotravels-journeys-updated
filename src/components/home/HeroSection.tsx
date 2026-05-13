@@ -11,6 +11,19 @@ import { Link } from "react-router-dom";
 const slides = [slide1, slide2, slide3];
 const BOOK_URL = "https://rprotravels.com/";
 
+const stats = [
+  { value: "500+", label: "Clients Served" },
+  { value: "1,000+", label: "Travel Requests Managed" },
+  { value: "300+", label: "Visa Support Cases" },
+  { value: "50+", label: "Destination Routes Covered" },
+  { value: "100+", label: "Corporate Travel Consultations" },
+  { value: "1,500+", label: "Customer Inquiries Handled" },
+  { value: "200+", label: "Tourism Bookings Processed" },
+  { value: "3+", label: "Years of Operations" },
+  { value: "95%", label: "Client Satisfaction Rate" },
+  { value: "Mon-Fri", label: "9AM - 4PM" },
+];
+
 export function HeroSection() {
   const [active, setActive] = useState(0);
 
@@ -38,7 +51,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-4 py-1.5 text-xs font-semibold tracking-wider uppercase border border-white/20">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            Pan-African Travel Partner
+            
           </span>
           <h1 className="mt-5 font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05]">
             Explore the World <br />
@@ -69,20 +82,17 @@ export function HeroSection() {
           </div>
 
           {/* trust strip */}
-          <div className="mt-10 flex items-center gap-6 text-white/70 text-sm">
-            <div>
-              <div className="text-2xl font-bold text-white">10K+</div>
-              <div>Happy Travelers</div>
-            </div>
-            <div className="h-10 w-px bg-white/20" />
-            <div>
-              <div className="text-2xl font-bold text-white">50+</div>
-              <div>Destinations</div>
-            </div>
-            <div className="h-10 w-px bg-white/20" />
-            <div>
-              <div className="text-2xl font-bold text-white">99%</div>
-              <div>Visa Success</div>
+          <div className="mt-10 overflow-hidden">
+            <div className="flex gap-8 animate-[trustScroll_30s_linear_infinite] whitespace-nowrap w-max">
+              {stats.map((stat, i) => (
+                <div key={i} className="flex items-center gap-8">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-white">{stat.value}</div>
+                    <div className="text-white/70 text-sm whitespace-nowrap">{stat.label}</div>
+                  </div>
+                  <div className="h-10 w-px bg-white/20 shrink-0" />
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -137,13 +147,17 @@ export function HeroSection() {
       </div>
 
       {/* Floating feature cards — overlap bottom */}
-      <div className="relative mt-12 md:mt-0 md:absolute md:-bottom-16 left-0 right-0 z-30 px-4">
+      <div className="absolute -bottom-16 left-0 right-0 z-30 px-4">
         <div className="container-px mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { Icon: Plane, title: "Easy Flight Booking", desc: "Seamless flight bookings worldwide." },
               { Icon: Globe, title: "Visa Assistance", desc: "Expert support for every visa type." },
-              { Icon: Hotel, title: "Hotel Reservations", desc: "Secure comfortable stays anywhere." },
+              {
+                Icon: Hotel,
+                title: "Hotel Reservations",
+                desc: "Secure comfortable stays anywhere.",
+              },
             ].map(({ Icon, title, desc }, i) => (
               <motion.div
                 key={title}

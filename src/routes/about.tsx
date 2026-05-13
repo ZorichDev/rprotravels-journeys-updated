@@ -69,9 +69,9 @@ export default function AboutPage() {
             </p>
             <div className="mt-8 grid grid-cols-3 gap-4">
               {[
-                { v: "10K+", l: "Travelers" },
-                { v: "50+", l: "Destinations" },
-                { v: "99%", l: "Visa Success" },
+                { v: "500+", l: "Clients Served" },
+                { v: "50+", l: "Destination Routes" },
+                { v: "95%", l: "Satisfaction Rate" },
               ].map((s) => (
                 <div key={s.l} className="text-center">
                   <div className="text-3xl font-heading font-bold text-primary">{s.v}</div>

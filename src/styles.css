@@ -181,3 +181,11 @@
     z-index: 1;
   }
 }
+@keyframes trustScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

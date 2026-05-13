@@ -16,10 +16,15 @@ export function AboutPreview() {
           className="relative"
         >
           <div className="relative rounded-[2rem] overflow-hidden shadow-[var(--shadow-card)]">
-            <img src={about} alt="R-Pro Travels consultant" className="w-full aspect-[4/5] object-cover" loading="lazy" />
+            <img
+              src={about}
+              alt="R-Pro Travels consultant"
+              className="w-full aspect-[4/5] object-cover"
+              loading="lazy"
+            />
           </div>
           <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground rounded-2xl p-5 shadow-[var(--shadow-glow)] hidden md:block">
-            <div className="text-3xl font-heading font-bold">100%</div>
+            <div className="text-3xl font-heading font-bold">95%</div>
             <div className="text-xs uppercase tracking-wider">Client Satisfaction</div>
           </div>
           <div className="absolute -top-6 -left-6 hidden md:block">
@@ -33,18 +38,24 @@ export function AboutPreview() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Who We Are</span>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">
+            Who We Are
+          </span>
           <h2 className="mt-3 font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-navy leading-tight">
             About <span className="text-gradient-brand">R-Pro Travels</span>
           </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed">
-            R-Pro Travels and Tours Limited is a trusted Pan-African travel partner dedicated to delivering seamless travel experiences. We specialize in visa assistance, flight bookings, hotel reservations, and customized travel solutions for individuals and organizations.
-          </p>
           <ul className="mt-6 space-y-3">
             {[
-              "Trusted by 10,000+ travelers across Africa",
-              "End-to-end visa, flight & hotel solutions",
-              "Dedicated customer support, every step of the way",
+              "500+ Clients Served",
+              "1,000+ Travel Requests Managed",
+              "300+ Visa Support Cases",
+              "50+ Destination Routes Covered",
+              "100+ Corporate Travel Consultations",
+              "1,500+ Customer Inquiries Handled",
+              "200+ Tourism Bookings Processed",
+              "3+ Years of Operations",
+              "95% Client Satisfaction Rate",
+              "Mon – Fri | 9AM – 4PM",
             ].map((t) => (
               <li key={t} className="flex gap-3 text-navy">
                 <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -53,7 +64,9 @@ export function AboutPreview() {
             ))}
           </ul>
           <Button asChild size="lg" className="mt-8 rounded-full bg-navy hover:bg-navy/90 px-7">
-            <Link to="/about">Read More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link to="/about">
+              Read More <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </motion.div>
       </div>
