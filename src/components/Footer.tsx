@@ -12,17 +12,19 @@ export function Footer() {
               <img src={logo} alt="R-Pro Travels" className="h-12 w-12 object-contain" />
               <div>
                 <div className="font-heading font-bold text-lg">R-Pro Travels</div>
-                <div className="text-xs text-white/70 uppercase tracking-widest">& Tours Limited</div>
+                <div className="text-xs text-white/70 uppercase tracking-widest">
+                  & Tours Limited
+                </div>
               </div>
             </div>
             <p className="text-sm text-white/70 leading-relaxed">
-              Your trusted  travel partner — visa, flights, hotels, and premium travel services.
+              Your trusted travel partner — visa, flights, hotels, and premium travel services.
             </p>
             <div className="flex gap-3 mt-5">
               {[
-                { Icon: Facebook, href: "#" },
-                { Icon: Instagram, href: "#" },
-                { Icon: Twitter, href: "#" },
+                { Icon: Facebook, href: "https://www.facebook.com/share/1J33srUqLu/?mibextid=wwXIfr" },
+                { Icon: Instagram, href: "https://www.instagram.com/r_pro_travels?igsh=MWdieWpuNXBpbGRsOA==" },
+                // { Icon: Twitter, href: "#" },
               ].map(({ Icon, href }, i) => (
                 <a
                   key={i}
@@ -39,12 +41,33 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-semibold mb-4 text-base">Quick Links</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><Link to="/" className="hover:text-white transition">Home</Link></li>
-              <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-              <li><Link to="/services" className="hover:text-white transition">Services</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
               <li>
-                <a href="https://rprotravels.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                <Link to="/" className="hover:text-white transition">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-white transition">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-white transition">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-white transition">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="https://rprotravels.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition"
+                >
                   Book Online
                 </a>
               </li>
@@ -68,11 +91,16 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex gap-3">
                 <Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-                <a href="tel:09036630650" className="hover:text-white">09036630650</a>
+                <a href="tel:09036630650" className="hover:text-white">
+                  09036630650
+                </a>
               </li>
               <li className="flex gap-3">
                 <Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-                <a href="mailto:customercare@rprogroup.com.ng" className="hover:text-white break-all">
+                <a
+                  href="mailto:customercare@rprogroup.com.ng"
+                  className="hover:text-white break-all"
+                >
                   customercare@rprogroup.com.ng
                 </a>
               </li>

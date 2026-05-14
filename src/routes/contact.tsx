@@ -131,9 +131,9 @@ export default function ContactPage() {
                 <p className="mt-1 text-sm text-white/70">Stay updated on travel deals and news.</p>
                 <div className="mt-5 flex gap-3">
                   {[
-                    { Icon: Facebook, href: "#" },
-                    { Icon: Instagram, href: "#" },
-                    { Icon: Twitter, href: "#" },
+                    { Icon: Facebook, href: "https://www.facebook.com/share/1J33srUqLu/?mibextid=wwXIfr" },
+                    { Icon: Instagram, href: "https://www.instagram.com/r_pro_travels?igsh=MWdieWpuNXBpbGRsOA==" },
+                    // { Icon: Twitter, href: "#" },
                   ].map(({ Icon, href }, i) => (
                     <a
                       key={i}
